@@ -53,5 +53,11 @@
     <Compile Include="Torneo.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Edu.Sena.Datos\Edu.Sena.Datos.csproj">
+      <Project>{d85a63f0-9323-46f5-b010-d6f07b706127}</Project>
+      <Name>Edu.Sena.Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

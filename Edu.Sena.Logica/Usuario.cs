@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Edu.Sena.Datos;
+using System.Data;
 
 namespace Edu.Sena.Logica
 {
@@ -20,6 +22,7 @@ namespace Edu.Sena.Logica
         private List<Rol> rol;
         private List<Torneo> torneosParticipados;
         private List<Batalla> batallasAsistidas;
+        public string sentencia;
 
         public long Cedula { get => cedula; set => cedula = value; }
         public string Nombres { get => nombres; set => nombres = value; }
@@ -32,5 +35,7 @@ namespace Edu.Sena.Logica
         public List<Batalla> BatallasAsistidas { get => batallasAsistidas; set => batallasAsistidas = value; }
         internal List<Rol> Rol { get => rol; set => rol = value; }
         internal List<Torneo> TorneosParticipados { get => torneosParticipados; set => torneosParticipados = value; }
+
+
     }
 }

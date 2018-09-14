@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.torneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirFaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,7 +42,17 @@
             this.participantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.juradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarJuradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.db_sifreestyleDataSet = new Edu.Sena.Presentacion.db_sifreestyleDataSet();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.rolesTableAdapter();
+            this.idRolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -51,19 +60,6 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "Fox";
             this.notifyIcon1.Visible = true;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.torneosToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(70, 450);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // torneosToolStripMenuItem
             // 
@@ -73,19 +69,19 @@
             this.todosLosTorneosToolStripMenuItem});
             this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
             this.torneosToolStripMenuItem.Text = "Torneos";
             // 
             // estadisticasTorneosToolStripMenuItem
             // 
             this.estadisticasTorneosToolStripMenuItem.Name = "estadisticasTorneosToolStripMenuItem";
-            this.estadisticasTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.estadisticasTorneosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.estadisticasTorneosToolStripMenuItem.Text = "Estadisticas  Torneos";
             // 
             // añadirFaseToolStripMenuItem
             // 
             this.añadirFaseToolStripMenuItem.Name = "añadirFaseToolStripMenuItem";
-            this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.añadirFaseToolStripMenuItem.Text = "Añadir Fase";
             // 
             // todosLosTorneosToolStripMenuItem
@@ -95,27 +91,27 @@
             this.registrarTorneoToolStripMenuItem1,
             this.cancelarTorneoToolStripMenuItem1});
             this.todosLosTorneosToolStripMenuItem.Name = "todosLosTorneosToolStripMenuItem";
-            this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.todosLosTorneosToolStripMenuItem.Text = "Todos los Torneos";
             // 
             // MenuTorneo
             // 
             this.MenuTorneo.Name = "MenuTorneo";
-            this.MenuTorneo.Size = new System.Drawing.Size(180, 22);
+            this.MenuTorneo.Size = new System.Drawing.Size(160, 22);
             this.MenuTorneo.Text = "Torneos";
             this.MenuTorneo.Click += new System.EventHandler(this.MenuTorneo_Click);
             // 
             // registrarTorneoToolStripMenuItem1
             // 
             this.registrarTorneoToolStripMenuItem1.Name = "registrarTorneoToolStripMenuItem1";
-            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
             this.registrarTorneoToolStripMenuItem1.Text = "Registrar Torneo";
             this.registrarTorneoToolStripMenuItem1.Click += new System.EventHandler(this.registrarTorneoToolStripMenuItem1_Click);
             // 
             // cancelarTorneoToolStripMenuItem1
             // 
             this.cancelarTorneoToolStripMenuItem1.Name = "cancelarTorneoToolStripMenuItem1";
-            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
             this.cancelarTorneoToolStripMenuItem1.Text = "Cancelar Torneo";
             // 
             // usuariosToolStripMenuItem
@@ -125,7 +121,7 @@
             this.juradosToolStripMenuItem});
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // participantesToolStripMenuItem
@@ -148,18 +144,77 @@
             this.asignarJuradoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.asignarJuradoToolStripMenuItem.Text = "Asignar Jurado";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.torneosToolStripMenuItem,
+            this.usuariosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(70, 450);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idRolDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.rolesBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(222, 234);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(504, 150);
+            this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // db_sifreestyleDataSet
+            // 
+            this.db_sifreestyleDataSet.DataSetName = "db_sifreestyleDataSet";
+            this.db_sifreestyleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.db_sifreestyleDataSet;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // idRolDataGridViewTextBoxColumn
+            // 
+            this.idRolDataGridViewTextBoxColumn.DataPropertyName = "idRol";
+            this.idRolDataGridViewTextBoxColumn.HeaderText = "idRol";
+            this.idRolDataGridViewTextBoxColumn.Name = "idRolDataGridViewTextBoxColumn";
+            this.idRolDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,18 +223,24 @@
         #endregion
 
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem torneosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem estadisticasTorneosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirFaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem todosLosTorneosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuTorneo;
         private System.Windows.Forms.ToolStripMenuItem registrarTorneoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cancelarTorneoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem participantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem juradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarJuradoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem MenuTorneo;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private db_sifreestyleDataSet db_sifreestyleDataSet;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private db_sifreestyleDataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idRolDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
     }
 }
 

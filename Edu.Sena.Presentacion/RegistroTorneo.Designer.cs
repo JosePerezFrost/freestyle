@@ -58,7 +58,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.botonsito = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -90,13 +90,13 @@
             // estadisticasTorneosToolStripMenuItem
             // 
             this.estadisticasTorneosToolStripMenuItem.Name = "estadisticasTorneosToolStripMenuItem";
-            this.estadisticasTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.estadisticasTorneosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.estadisticasTorneosToolStripMenuItem.Text = "Estadisticas  Torneos";
             // 
             // añadirFaseToolStripMenuItem
             // 
             this.añadirFaseToolStripMenuItem.Name = "añadirFaseToolStripMenuItem";
-            this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.añadirFaseToolStripMenuItem.Text = "Añadir Fase";
             // 
             // todosLosTorneosToolStripMenuItem
@@ -106,26 +106,26 @@
             this.registrarTorneoToolStripMenuItem1,
             this.cancelarTorneoToolStripMenuItem1});
             this.todosLosTorneosToolStripMenuItem.Name = "todosLosTorneosToolStripMenuItem";
-            this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.todosLosTorneosToolStripMenuItem.Text = "Todos los Torneos";
             // 
             // MenuTorneo
             // 
             this.MenuTorneo.Name = "MenuTorneo";
-            this.MenuTorneo.Size = new System.Drawing.Size(161, 22);
+            this.MenuTorneo.Size = new System.Drawing.Size(160, 22);
             this.MenuTorneo.Text = "Torneos";
             this.MenuTorneo.Click += new System.EventHandler(this.MenuTorneo_Click);
             // 
             // registrarTorneoToolStripMenuItem1
             // 
             this.registrarTorneoToolStripMenuItem1.Name = "registrarTorneoToolStripMenuItem1";
-            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
             this.registrarTorneoToolStripMenuItem1.Text = "Registrar Torneo";
             // 
             // cancelarTorneoToolStripMenuItem1
             // 
             this.cancelarTorneoToolStripMenuItem1.Name = "cancelarTorneoToolStripMenuItem1";
-            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
             this.cancelarTorneoToolStripMenuItem1.Text = "Cancelar Torneo";
             // 
             // usuariosToolStripMenuItem
@@ -335,21 +335,22 @@
             this.button1.Text = "Crear Torneo";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // botonsito
             // 
-            this.button2.Location = new System.Drawing.Point(448, 329);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 23;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.botonsito.Location = new System.Drawing.Point(448, 329);
+            this.botonsito.Name = "botonsito";
+            this.botonsito.Size = new System.Drawing.Size(75, 23);
+            this.botonsito.TabIndex = 23;
+            this.botonsito.Text = "btn";
+            this.botonsito.UseVisualStyleBackColor = true;
+            this.botonsito.Click += new System.EventHandler(this.button2_Click);
             // 
             // RegistroTorneo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.botonsito);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.checkedListBox1);
@@ -413,6 +414,6 @@
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button botonsito;
     }
 }
