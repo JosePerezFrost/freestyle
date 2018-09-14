@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Edu.Sena.Datos
 {
-    public class Class1
+    public class Conexion
     {
     }
 }
