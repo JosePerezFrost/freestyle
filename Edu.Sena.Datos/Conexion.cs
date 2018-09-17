@@ -17,6 +17,7 @@ namespace Edu.Sena.Datos
         public static DataTable Tabla;
         public string cadenaConexion;
         public string _mensaje;
+ 
 
         public static void Conectar()
         {
@@ -42,6 +43,27 @@ namespace Edu.Sena.Datos
             Tabla.Load(lecturaDatos);
             lecturaDatos.Close();
             return Tabla;
+        }
+        private string con = @"Data Source=SALAZARNICOLAS\SQLEXPRESS;Initial Catalog=db_sifreestyle;Integrated Security=True";
+        public string Cnn
+        {
+            get { return con; }
+            set { value = con; }
+        }
+
+        public SqlConnection conecte()
+        {
+            try
+            {
+                cadena = new SqlConnection(Cnn);
+                cadena.Open();
+                return cadena;
+            }
+            catch (SqlException ex)
+            {
+                cadena.Close();
+                return cadena;
+            }
         }
     }
 }
