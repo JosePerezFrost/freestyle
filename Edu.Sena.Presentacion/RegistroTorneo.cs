@@ -24,10 +24,6 @@ namespace Edu.Sena.Presentacion
             this.Hide();
         }
 
-        private void RegistroTorneo_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -37,6 +33,13 @@ namespace Edu.Sena.Presentacion
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void añadirFaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AñadirFase a = new AñadirFase();
+            a.Show();
+            this.Hide();
         }
     }
 }
