@@ -40,8 +40,8 @@ namespace Edu.Sena.Presentacion
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'db_sifreestyleDataSet.roles' Puede moverla o quitarla según sea necesario.
-            this.rolesTableAdapter.Fill(this.db_sifreestyleDataSet.roles);
+            // TODO: esta línea de código carga datos en la tabla 'db_sifreestyleDataSet1.roles' Puede moverla o quitarla según sea necesario.
+            this.rolesTableAdapter1.Fill(this.db_sifreestyleDataSet1.roles);
 
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Edu.Sena.Logica
 {
-    class Ciudad
+   public class Ciudad
     {
         private int codigoCiudad;
         private string nombre;

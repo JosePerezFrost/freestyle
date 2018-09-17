@@ -44,15 +44,20 @@
             this.asignarJuradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.db_sifreestyleDataSet = new Edu.Sena.Presentacion.db_sifreestyleDataSet();
-            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolesTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.rolesTableAdapter();
             this.idRolDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_sifreestyleDataSet = new Edu.Sena.Presentacion.db_sifreestyleDataSet();
+            this.rolesTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.rolesTableAdapter();
+            this.db_sifreestyleDataSet1 = new Edu.Sena.Presentacion.db_sifreestyleDataSet1();
+            this.rolesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter1 = new Edu.Sena.Presentacion.db_sifreestyleDataSet1TableAdapters.rolesTableAdapter();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // notifyIcon1
@@ -164,26 +169,12 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idRolDataGridViewTextBoxColumn,
             this.tipoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.rolesBindingSource;
+            this.dataGridView1.DataSource = this.rolesBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(222, 234);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(504, 150);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // db_sifreestyleDataSet
-            // 
-            this.db_sifreestyleDataSet.DataSetName = "db_sifreestyleDataSet";
-            this.db_sifreestyleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rolesBindingSource
-            // 
-            this.rolesBindingSource.DataMember = "roles";
-            this.rolesBindingSource.DataSource = this.db_sifreestyleDataSet;
-            // 
-            // rolesTableAdapter
-            // 
-            this.rolesTableAdapter.ClearBeforeFill = true;
             // 
             // idRolDataGridViewTextBoxColumn
             // 
@@ -197,6 +188,34 @@
             this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
             this.tipoDataGridViewTextBoxColumn.HeaderText = "tipo";
             this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.db_sifreestyleDataSet;
+            // 
+            // db_sifreestyleDataSet
+            // 
+            this.db_sifreestyleDataSet.DataSetName = "db_sifreestyleDataSet";
+            this.db_sifreestyleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // db_sifreestyleDataSet1
+            // 
+            this.db_sifreestyleDataSet1.DataSetName = "db_sifreestyleDataSet1";
+            this.db_sifreestyleDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rolesBindingSource1
+            // 
+            this.rolesBindingSource1.DataMember = "roles";
+            this.rolesBindingSource1.DataSource = this.db_sifreestyleDataSet1;
+            // 
+            // rolesTableAdapter1
+            // 
+            this.rolesTableAdapter1.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -213,8 +232,10 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,6 +262,9 @@
         private db_sifreestyleDataSetTableAdapters.rolesTableAdapter rolesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRolDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private db_sifreestyleDataSet1 db_sifreestyleDataSet1;
+        private System.Windows.Forms.BindingSource rolesBindingSource1;
+        private db_sifreestyleDataSet1TableAdapters.rolesTableAdapter rolesTableAdapter1;
     }
 }
 
