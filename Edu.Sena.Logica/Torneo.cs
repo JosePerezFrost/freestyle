@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Edu.Sena.Datos;
+using System.Windows.Forms;
 
 namespace Edu.Sena.Logica
 {
-    class Torneo
+    public class Torneo
     {
         private int idTorneo;
         private int cupos;
@@ -34,6 +37,7 @@ namespace Edu.Sena.Logica
         internal Ciudad CiudadRealizacion { get => ciudadRealizacion; set => ciudadRealizacion = value; }
         internal List<Usuario> Usuarios { get => usuarios; set => usuarios = value; }
         internal List<FaseTorneo> Fases { get => fases; set => fases = value; }
+
 
     }
 }

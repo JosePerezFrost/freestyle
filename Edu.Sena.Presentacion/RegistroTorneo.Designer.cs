@@ -55,10 +55,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.botonsito = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +71,7 @@
             this.usuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(70, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -84,20 +83,21 @@
             this.todosLosTorneosToolStripMenuItem});
             this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.torneosToolStripMenuItem.Text = "Torneos";
             // 
             // estadisticasTorneosToolStripMenuItem
             // 
             this.estadisticasTorneosToolStripMenuItem.Name = "estadisticasTorneosToolStripMenuItem";
-            this.estadisticasTorneosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.estadisticasTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.estadisticasTorneosToolStripMenuItem.Text = "Estadisticas  Torneos";
             // 
             // añadirFaseToolStripMenuItem
             // 
             this.añadirFaseToolStripMenuItem.Name = "añadirFaseToolStripMenuItem";
-            this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.añadirFaseToolStripMenuItem.Text = "Añadir Fase";
+            this.añadirFaseToolStripMenuItem.Click += new System.EventHandler(this.añadirFaseToolStripMenuItem_Click);
             // 
             // todosLosTorneosToolStripMenuItem
             // 
@@ -106,26 +106,26 @@
             this.registrarTorneoToolStripMenuItem1,
             this.cancelarTorneoToolStripMenuItem1});
             this.todosLosTorneosToolStripMenuItem.Name = "todosLosTorneosToolStripMenuItem";
-            this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.todosLosTorneosToolStripMenuItem.Text = "Todos los Torneos";
             // 
             // MenuTorneo
             // 
             this.MenuTorneo.Name = "MenuTorneo";
-            this.MenuTorneo.Size = new System.Drawing.Size(160, 22);
+            this.MenuTorneo.Size = new System.Drawing.Size(161, 22);
             this.MenuTorneo.Text = "Torneos";
             this.MenuTorneo.Click += new System.EventHandler(this.MenuTorneo_Click);
             // 
             // registrarTorneoToolStripMenuItem1
             // 
             this.registrarTorneoToolStripMenuItem1.Name = "registrarTorneoToolStripMenuItem1";
-            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
+            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.registrarTorneoToolStripMenuItem1.Text = "Registrar Torneo";
             // 
             // cancelarTorneoToolStripMenuItem1
             // 
             this.cancelarTorneoToolStripMenuItem1.Name = "cancelarTorneoToolStripMenuItem1";
-            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
+            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.cancelarTorneoToolStripMenuItem1.Text = "Cancelar Torneo";
             // 
             // usuariosToolStripMenuItem
@@ -135,13 +135,13 @@
             this.juradosToolStripMenuItem});
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // participantesToolStripMenuItem
             // 
             this.participantesToolStripMenuItem.Name = "participantesToolStripMenuItem";
-            this.participantesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.participantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.participantesToolStripMenuItem.Text = "Participantes";
             // 
             // juradosToolStripMenuItem
@@ -149,13 +149,13 @@
             this.juradosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.asignarJuradoToolStripMenuItem});
             this.juradosToolStripMenuItem.Name = "juradosToolStripMenuItem";
-            this.juradosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.juradosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.juradosToolStripMenuItem.Text = "Jurados";
             // 
             // asignarJuradoToolStripMenuItem
             // 
             this.asignarJuradoToolStripMenuItem.Name = "asignarJuradoToolStripMenuItem";
-            this.asignarJuradoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.asignarJuradoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.asignarJuradoToolStripMenuItem.Text = "Asignar Jurado";
             // 
             // label1
@@ -301,21 +301,6 @@
             this.dateTimePicker3.Size = new System.Drawing.Size(69, 20);
             this.dateTimePicker3.TabIndex = 19;
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "32vo",
-            "16vo",
-            "8vo",
-            "Cuartos",
-            "Semifinal",
-            "Final"});
-            this.checkedListBox1.Location = new System.Drawing.Point(567, 219);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 20;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -335,22 +320,19 @@
             this.button1.Text = "Crear Torneo";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // botonsito
+            // checkedListBox1
             // 
-            this.botonsito.Location = new System.Drawing.Point(448, 329);
-            this.botonsito.Name = "botonsito";
-            this.botonsito.Size = new System.Drawing.Size(75, 23);
-            this.botonsito.TabIndex = 23;
-            this.botonsito.Text = "btn";
-            this.botonsito.UseVisualStyleBackColor = true;
-            this.botonsito.Click += new System.EventHandler(this.button2_Click);
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Location = new System.Drawing.Point(567, 219);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBox1.TabIndex = 20;
             // 
             // RegistroTorneo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.botonsito);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.checkedListBox1);
@@ -373,7 +355,6 @@
             this.Name = "RegistroTorneo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroTorneo";
-            this.Load += new System.EventHandler(this.RegistroTorneo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -411,9 +392,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button botonsito;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
