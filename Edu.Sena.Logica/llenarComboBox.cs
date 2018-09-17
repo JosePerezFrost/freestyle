@@ -69,5 +69,6 @@ namespace Edu.Sena.Logica
                 MessageBox.Show("No se lleno el combo box");
             }
         }
+
     }
 }

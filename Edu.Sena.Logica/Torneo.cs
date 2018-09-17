@@ -34,5 +34,6 @@ namespace Edu.Sena.Logica
         internal Ciudad CiudadRealizacion { get => ciudadRealizacion; set => ciudadRealizacion = value; }
         internal List<Usuario> Usuarios { get => usuarios; set => usuarios = value; }
         internal List<FaseTorneo> Fases { get => fases; set => fases = value; }
+
     }
 }

@@ -119,6 +119,7 @@ namespace Edu.Sena.Presentacion
                                                 u.Genero = Convert.ToInt32(cbCiudad.ValueMember);
                                                 u.Rol = Convert.ToInt32(cbGenero.ValueMember);
                                                 u.insertar();
+                                                MessageBox.Show("Datos Guardados");
                                             }
                                         }
                                     }
