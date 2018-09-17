@@ -38,12 +38,6 @@ namespace Edu.Sena.Logica
         internal List<Usuario> Usuarios { get => usuarios; set => usuarios = value; }
         internal List<FaseTorneo> Fases { get => fases; set => fases = value; }
 
-        public DataTable torneosActivos()
-        {
-            string cadena = "SELECT * FROM [dbo].[torneos] WHERE idestado = 1";
-            DataTable Tabla = Conexion.consultar(cadena);
-            return Tabla;
 
-        }
     }
 }
