@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Edu.Sena.Logica
 {
-    class Calificacion
+    public class Calificacion
     {
         private int idCalificacion;
         private int puntuacion;

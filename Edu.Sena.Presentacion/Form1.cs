@@ -38,11 +38,11 @@ namespace Edu.Sena.Presentacion
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void añadirFaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'db_sifreestyleDataSet.roles' Puede moverla o quitarla según sea necesario.
-            this.rolesTableAdapter.Fill(this.db_sifreestyleDataSet.roles);
-
+            AñadirFase a = new AñadirFase();
+            a.Show();
+            this.Hide();
         }
     }
 }
