@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Edu.Sena.Logica;
+using Edu.Sena.Datos;
+using System.Data.SqlClient;
 
 namespace Edu.Sena.Presentacion
 {
@@ -45,14 +47,17 @@ namespace Edu.Sena.Presentacion
 
         private void registroUsuario_Load(object sender, EventArgs e)
         {
-            c.llenarItemCiudad(cbCiudad);
-            c.llenarItemRol(cbROL);
-            c.llenarItemGenero(cbGenero);
+            // TODO: esta línea de código carga datos en la tabla 'db_sifreestyleDataSet4.roles' Puede moverla o quitarla según sea necesario.
+            this.rolesTableAdapter.Fill(this.db_sifreestyleDataSet4.roles);
+            // TODO: esta línea de código carga datos en la tabla 'db_sifreestyleDataSet3.ciudades' Puede moverla o quitarla según sea necesario.
+            this.ciudadesTableAdapter.Fill(this.db_sifreestyleDataSet3.ciudades);
+            // TODO: esta línea de código carga datos en la tabla 'db_sifreestyleDataSet2.genero' Puede moverla o quitarla según sea necesario.
+            this.generoTableAdapter.Fill(this.db_sifreestyleDataSet2.genero);
         }
 
         private void btnRegistro_Click(object sender, EventArgs e)
         {
-            if (txtCedula.Text == "")
+            if (Cedula.Text == "")
             {
                 MessageBox.Show("Ingrese la cedula");
             }
@@ -108,18 +113,12 @@ namespace Edu.Sena.Presentacion
                                             }
                                             else
                                             {
-                                                u.Cedula = int.Parse(txtCedula.Text);
-                                                u.Nombres = Convert.ToString(txtNombre.Text);
-                                                u.Apellidos = Convert.ToString(txtApellido.Text);
-                                                u.FechaNacimiento = Convert.ToDateTime(dtpFechaNacimiento.Value);
-                                                u.Celular = int.Parse(txtCelular.Text);
-                                                u.Correo = Convert.ToString(txtCorreo.Text);
-                                                u.NombreArtistico = Convert.ToString(txtNombreArtistico.Text);
-                                                u.Ciudad = Convert.ToInt32(cbCiudad.ValueMember);
-                                                u.Genero = Convert.ToInt32(cbCiudad.ValueMember);
-                                                u.Rol = Convert.ToInt32(cbGenero.ValueMember);
-                                                u.insertar();
-                                                MessageBox.Show("Datos Guardados");
+                                                u.insertar(Convert.ToInt64(Cedula.Text), txtNombre.Text, txtApellido.Text, Convert.ToInt64(txtCelular.Text), txtCorreo.Text, txtNombreArtistico.Text, txtContraseña.Text, Convert.ToInt32(cbROL.SelectedValue), Convert.ToInt32(cbCiudad.SelectedValue), Convert.ToInt32(cbGenero.SelectedValue));
+                                                MessageBox.Show("Se ha registrado correctamente");
+                                                Login menu = new Login();
+                                                menu.Show();
+                                                this.Hide();
+
                                             }
                                         }
                                     }
@@ -129,6 +128,7 @@ namespace Edu.Sena.Presentacion
                     }
                 }
             }
+
         }
     }
 }
