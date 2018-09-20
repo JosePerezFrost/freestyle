@@ -1,6 +1,6 @@
 ﻿namespace Edu.Sena.Presentacion
 {
-    partial class TorneosActivos
+    partial class Participantes
     {
         /// <summary>
         /// Required designer variable.
@@ -33,19 +33,17 @@
             this.estadisticasTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.añadirFaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.todosLosTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.torneosActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuTorneo = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarTorneoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelarTorneoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.participantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.juradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarJuradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tableTorneos = new System.Windows.Forms.DataGridView();
-            this.btnParticipantes = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.colCancelar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableTorneos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -83,22 +81,24 @@
             this.añadirFaseToolStripMenuItem.Name = "añadirFaseToolStripMenuItem";
             this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.añadirFaseToolStripMenuItem.Text = "Añadir Fase";
+            this.añadirFaseToolStripMenuItem.Click += new System.EventHandler(this.añadirFaseToolStripMenuItem_Click);
             // 
             // todosLosTorneosToolStripMenuItem
             // 
             this.todosLosTorneosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.torneosActivosToolStripMenuItem,
+            this.MenuTorneo,
             this.registrarTorneoToolStripMenuItem1,
             this.cancelarTorneoToolStripMenuItem1});
             this.todosLosTorneosToolStripMenuItem.Name = "todosLosTorneosToolStripMenuItem";
             this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.todosLosTorneosToolStripMenuItem.Text = "Todos los Torneos";
             // 
-            // torneosActivosToolStripMenuItem
+            // MenuTorneo
             // 
-            this.torneosActivosToolStripMenuItem.Name = "torneosActivosToolStripMenuItem";
-            this.torneosActivosToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.torneosActivosToolStripMenuItem.Text = "Torneos";
+            this.MenuTorneo.Name = "MenuTorneo";
+            this.MenuTorneo.Size = new System.Drawing.Size(161, 22);
+            this.MenuTorneo.Text = "Torneos";
+            this.MenuTorneo.Click += new System.EventHandler(this.MenuTorneo_Click);
             // 
             // registrarTorneoToolStripMenuItem1
             // 
@@ -143,56 +143,38 @@
             this.asignarJuradoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.asignarJuradoToolStripMenuItem.Text = "Asignar Jurado";
             // 
-            // label8
+            // label1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(97, 40);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(167, 46);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Torneos";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(120, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(340, 39);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Participantes Torneo ";
             // 
-            // tableTorneos
+            // dataGridView1
             // 
-            this.tableTorneos.AllowUserToOrderColumns = true;
-            this.tableTorneos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableTorneos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnParticipantes,
-            this.colCancelar});
-            this.tableTorneos.Location = new System.Drawing.Point(73, 160);
-            this.tableTorneos.Name = "tableTorneos";
-            this.tableTorneos.Size = new System.Drawing.Size(715, 243);
-            this.tableTorneos.TabIndex = 4;
-            this.tableTorneos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableTorneos_CellContentClick);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(127, 144);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(566, 150);
+            this.dataGridView1.TabIndex = 4;
             // 
-            // btnParticipantes
-            // 
-            this.btnParticipantes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.btnParticipantes.HeaderText = "Participantes";
-            this.btnParticipantes.Name = "btnParticipantes";
-            this.btnParticipantes.Width = 74;
-            // 
-            // colCancelar
-            // 
-            this.colCancelar.HeaderText = "Cancelar";
-            this.colCancelar.Name = "colCancelar";
-            // 
-            // TorneosActivos
+            // Participantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tableTorneos);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.label8);
-            this.Name = "TorneosActivos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TorneosActivos";
-            this.Load += new System.EventHandler(this.TorneosActivos_Load);
+            this.Name = "Participantes";
+            this.Text = "Participantes";
+            this.Load += new System.EventHandler(this.Participantes_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tableTorneos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,16 +187,14 @@
         private System.Windows.Forms.ToolStripMenuItem estadisticasTorneosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirFaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem todosLosTorneosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem torneosActivosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuTorneo;
         private System.Windows.Forms.ToolStripMenuItem registrarTorneoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cancelarTorneoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem participantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem juradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarJuradoToolStripMenuItem;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView tableTorneos;
-        private System.Windows.Forms.DataGridViewButtonColumn btnParticipantes;
-        private System.Windows.Forms.DataGridViewButtonColumn colCancelar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

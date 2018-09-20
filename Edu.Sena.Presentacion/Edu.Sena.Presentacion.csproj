@@ -45,30 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AñadirFase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AñadirFase.Designer.cs">
+      <DependentUpon>AñadirFase.cs</DependentUpon>
+    </Compile>
     <Compile Include="db_sifreestyleDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_sifreestyleDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="db_sifreestyleDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_sifreestyleDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="db_sifreestyleDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_sifreestyleDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="db_sifreestyleDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_sifreestyleDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="db_sifreestyleDataSet4.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_sifreestyleDataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -76,11 +62,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Participantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Participantes.Designer.cs">
+      <DependentUpon>Participantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,29 +76,20 @@
     <Compile Include="RegistroTorneo.Designer.cs">
       <DependentUpon>RegistroTorneo.cs</DependentUpon>
     </Compile>
-    <Compile Include="registroUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="registroUsuario.Designer.cs">
-      <DependentUpon>registroUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="rol.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="rol.Designer.cs">
-      <DependentUpon>rol.cs</DependentUpon>
-    </Compile>
     <Compile Include="TorneosActivos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TorneosActivos.Designer.cs">
       <DependentUpon>TorneosActivos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AñadirFase.resx">
+      <DependentUpon>AñadirFase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Participantes.resx">
+      <DependentUpon>Participantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -125,12 +102,6 @@
     </Compile>
     <EmbeddedResource Include="RegistroTorneo.resx">
       <DependentUpon>RegistroTorneo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="registroUsuario.resx">
-      <DependentUpon>registroUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rol.resx">
-      <DependentUpon>rol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TorneosActivos.resx">
       <DependentUpon>TorneosActivos.cs</DependentUpon>
@@ -145,50 +116,6 @@
     </None>
     <None Include="db_sifreestyleDataSet.xss">
       <DependentUpon>db_sifreestyleDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="db_sifreestyleDataSet1.xsc">
-      <DependentUpon>db_sifreestyleDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="db_sifreestyleDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_sifreestyleDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_sifreestyleDataSet1.xss">
-      <DependentUpon>db_sifreestyleDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="db_sifreestyleDataSet2.xsc">
-      <DependentUpon>db_sifreestyleDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="db_sifreestyleDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_sifreestyleDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_sifreestyleDataSet2.xss">
-      <DependentUpon>db_sifreestyleDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="db_sifreestyleDataSet3.xsc">
-      <DependentUpon>db_sifreestyleDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="db_sifreestyleDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_sifreestyleDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_sifreestyleDataSet3.xss">
-      <DependentUpon>db_sifreestyleDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="db_sifreestyleDataSet4.xsc">
-      <DependentUpon>db_sifreestyleDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="db_sifreestyleDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_sifreestyleDataSet4.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_sifreestyleDataSet4.xss">
-      <DependentUpon>db_sifreestyleDataSet4.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

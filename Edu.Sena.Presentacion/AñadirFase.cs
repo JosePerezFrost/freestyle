@@ -11,38 +11,40 @@ using Edu.Sena.Logica;
 
 namespace Edu.Sena.Presentacion
 {
-    public partial class Form1 : Form
+    public partial class AñadirFase : Form
     {
-
-        public Form1()
+        public AñadirFase()
         {
             InitializeComponent();
         }
 
-        public void MenuTorneo_Click(object sender, EventArgs e)
+        private void añadirFaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void MenuTorneo_Click(object sender, EventArgs e)
+        {
+
             TorneosActivos t = new TorneosActivos();
             t.Show();
             this.Hide();
         }
 
-        public void registrarTorneoToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void registrarTorneoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             RegistroTorneo r = new RegistroTorneo();
             r.Show();
             this.Hide();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAggFase_Click(object sender, EventArgs e)
         {
-            
-        }
+            FaseTorneo f = new FaseTorneo();
+            f.registrarFase(txtNombreFase.Text);
+           MessageBox.Show("Se ha registrado una nueva fase con exito");
+            txtNombreFase.Text = "";
 
-        private void añadirFaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AñadirFase a = new AñadirFase();
-            a.Show();
-            this.Hide();
         }
     }
 }

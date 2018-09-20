@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.torneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -35,32 +36,46 @@
             this.todosLosTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuTorneo = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarTorneoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelarTorneoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.participantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.juradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarJuradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.dateInicio = new System.Windows.Forms.DateTimePicker();
+            this.dateFin = new System.Windows.Forms.DateTimePicker();
+            this.numCupos = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbCiudad = new System.Windows.Forms.ComboBox();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.timeHora = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.botonsito = new System.Windows.Forms.Button();
+            this.btnCrearTorneo = new System.Windows.Forms.Button();
+            this.listBoxFase = new System.Windows.Forms.CheckedListBox();
+            this.db_sifreestyleDataSet = new Edu.Sena.Presentacion.db_sifreestyleDataSet();
+            this.fasestorneosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fasestorneosTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.fasestorneosTableAdapter();
+            this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ciudadesTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.ciudadesTableAdapter();
+            this.ciudadeshastorneoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ciudades_has_torneoTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.ciudades_has_torneoTableAdapter();
+            this.tipotorneoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipotorneoTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.tipotorneoTableAdapter();
+            this.txtLugar = new System.Windows.Forms.TextBox();
+            this.lblLugar = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCupos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasestorneosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadeshastorneoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipotorneoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -90,43 +105,37 @@
             // estadisticasTorneosToolStripMenuItem
             // 
             this.estadisticasTorneosToolStripMenuItem.Name = "estadisticasTorneosToolStripMenuItem";
-            this.estadisticasTorneosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.estadisticasTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.estadisticasTorneosToolStripMenuItem.Text = "Estadisticas  Torneos";
             // 
             // añadirFaseToolStripMenuItem
             // 
             this.añadirFaseToolStripMenuItem.Name = "añadirFaseToolStripMenuItem";
-            this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.añadirFaseToolStripMenuItem.Text = "Añadir Fase";
+            this.añadirFaseToolStripMenuItem.Click += new System.EventHandler(this.añadirFaseToolStripMenuItem_Click);
             // 
             // todosLosTorneosToolStripMenuItem
             // 
             this.todosLosTorneosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuTorneo,
-            this.registrarTorneoToolStripMenuItem1,
-            this.cancelarTorneoToolStripMenuItem1});
+            this.registrarTorneoToolStripMenuItem1});
             this.todosLosTorneosToolStripMenuItem.Name = "todosLosTorneosToolStripMenuItem";
-            this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.todosLosTorneosToolStripMenuItem.Text = "Todos los Torneos";
             // 
             // MenuTorneo
             // 
             this.MenuTorneo.Name = "MenuTorneo";
-            this.MenuTorneo.Size = new System.Drawing.Size(160, 22);
+            this.MenuTorneo.Size = new System.Drawing.Size(161, 22);
             this.MenuTorneo.Text = "Torneos";
             this.MenuTorneo.Click += new System.EventHandler(this.MenuTorneo_Click);
             // 
             // registrarTorneoToolStripMenuItem1
             // 
             this.registrarTorneoToolStripMenuItem1.Name = "registrarTorneoToolStripMenuItem1";
-            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
+            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.registrarTorneoToolStripMenuItem1.Text = "Registrar Torneo";
-            // 
-            // cancelarTorneoToolStripMenuItem1
-            // 
-            this.cancelarTorneoToolStripMenuItem1.Name = "cancelarTorneoToolStripMenuItem1";
-            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(160, 22);
-            this.cancelarTorneoToolStripMenuItem1.Text = "Cancelar Torneo";
             // 
             // usuariosToolStripMenuItem
             // 
@@ -168,12 +177,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Nuevo Torneo";
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 137);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtNombre.Location = new System.Drawing.Point(123, 137);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 3;
             // 
             // label2
             // 
@@ -216,29 +225,29 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Fecha de Fin:";
             // 
-            // dateTimePicker1
+            // dateInicio
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 219);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2018, 12, 23, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2018, 8, 23, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(213, 20);
-            this.dateTimePicker1.TabIndex = 11;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 8, 23, 0, 0, 0, 0);
+            this.dateInicio.Location = new System.Drawing.Point(123, 219);
+            this.dateInicio.MaxDate = new System.DateTime(2018, 12, 23, 0, 0, 0, 0);
+            this.dateInicio.MinDate = new System.DateTime(2018, 9, 20, 0, 0, 0, 0);
+            this.dateInicio.Name = "dateInicio";
+            this.dateInicio.Size = new System.Drawing.Size(213, 20);
+            this.dateInicio.TabIndex = 11;
+            this.dateInicio.Value = new System.DateTime(2018, 9, 20, 15, 6, 15, 0);
             // 
-            // dateTimePicker2
+            // dateFin
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(123, 308);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(213, 20);
-            this.dateTimePicker2.TabIndex = 12;
+            this.dateFin.Location = new System.Drawing.Point(123, 308);
+            this.dateFin.Name = "dateFin";
+            this.dateFin.Size = new System.Drawing.Size(213, 20);
+            this.dateFin.TabIndex = 12;
             // 
-            // numericUpDown1
+            // numCupos
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(472, 137);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 13;
+            this.numCupos.Location = new System.Drawing.Point(472, 137);
+            this.numCupos.Name = "numCupos";
+            this.numCupos.Size = new System.Drawing.Size(120, 20);
+            this.numCupos.TabIndex = 13;
             // 
             // label6
             // 
@@ -250,28 +259,27 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Cupos:";
             // 
-            // comboBox1
+            // cbCiudad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Bogota ",
-            "Cali",
-            "Medellin"});
-            this.comboBox1.Location = new System.Drawing.Point(296, 137);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 15;
+            this.cbCiudad.DataSource = this.ciudadesBindingSource;
+            this.cbCiudad.DisplayMember = "nombre";
+            this.cbCiudad.FormattingEnabled = true;
+            this.cbCiudad.Location = new System.Drawing.Point(296, 137);
+            this.cbCiudad.Name = "cbCiudad";
+            this.cbCiudad.Size = new System.Drawing.Size(121, 21);
+            this.cbCiudad.TabIndex = 15;
+            this.cbCiudad.ValueMember = "codigoCiudad";
             // 
-            // comboBox2
+            // cbTipo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Preliminares",
-            "Red Bull"});
-            this.comboBox2.Location = new System.Drawing.Point(650, 137);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 16;
+            this.cbTipo.DataSource = this.tipotorneoBindingSource;
+            this.cbTipo.DisplayMember = "tipo";
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Location = new System.Drawing.Point(650, 137);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbTipo.TabIndex = 16;
+            this.cbTipo.ValueMember = "idTipo";
             // 
             // label7
             // 
@@ -293,28 +301,13 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Hora de Inicio:";
             // 
-            // dateTimePicker3
+            // timeHora
             // 
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker3.Location = new System.Drawing.Point(405, 219);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(69, 20);
-            this.dateTimePicker3.TabIndex = 19;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "32vo",
-            "16vo",
-            "8vo",
-            "Cuartos",
-            "Semifinal",
-            "Final"});
-            this.checkedListBox1.Location = new System.Drawing.Point(567, 219);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 20;
+            this.timeHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.timeHora.Location = new System.Drawing.Point(405, 219);
+            this.timeHora.Name = "timeHora";
+            this.timeHora.Size = new System.Drawing.Size(69, 20);
+            this.timeHora.TabIndex = 19;
             // 
             // label9
             // 
@@ -326,48 +319,110 @@
             this.label9.TabIndex = 21;
             this.label9.Text = "Fases:";
             // 
-            // button1
+            // btnCrearTorneo
             // 
-            this.button1.Location = new System.Drawing.Point(385, 390);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 23);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Crear Torneo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCrearTorneo.Location = new System.Drawing.Point(385, 390);
+            this.btnCrearTorneo.Name = "btnCrearTorneo";
+            this.btnCrearTorneo.Size = new System.Drawing.Size(116, 23);
+            this.btnCrearTorneo.TabIndex = 22;
+            this.btnCrearTorneo.Text = "Crear Torneo";
+            this.btnCrearTorneo.UseVisualStyleBackColor = true;
+            this.btnCrearTorneo.Click += new System.EventHandler(this.button1_Click);
             // 
-            // botonsito
+            // listBoxFase
             // 
-            this.botonsito.Location = new System.Drawing.Point(448, 329);
-            this.botonsito.Name = "botonsito";
-            this.botonsito.Size = new System.Drawing.Size(75, 23);
-            this.botonsito.TabIndex = 23;
-            this.botonsito.Text = "btn";
-            this.botonsito.UseVisualStyleBackColor = true;
-            this.botonsito.Click += new System.EventHandler(this.button2_Click);
+            this.listBoxFase.DataBindings.Add(new System.Windows.Forms.Binding("SelectedItem", this.fasestorneosBindingSource, "idFase", true));
+            this.listBoxFase.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.fasestorneosBindingSource, "nombreFas", true));
+            this.listBoxFase.FormattingEnabled = true;
+            this.listBoxFase.Location = new System.Drawing.Point(567, 219);
+            this.listBoxFase.Name = "listBoxFase";
+            this.listBoxFase.Size = new System.Drawing.Size(120, 94);
+            this.listBoxFase.TabIndex = 20;
+            this.listBoxFase.SelectedIndexChanged += new System.EventHandler(this.listBoxFase_SelectedIndexChanged);
+            // 
+            // db_sifreestyleDataSet
+            // 
+            this.db_sifreestyleDataSet.DataSetName = "db_sifreestyleDataSet";
+            this.db_sifreestyleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fasestorneosBindingSource
+            // 
+            this.fasestorneosBindingSource.DataMember = "fasestorneos";
+            this.fasestorneosBindingSource.DataSource = this.db_sifreestyleDataSet;
+            // 
+            // fasestorneosTableAdapter
+            // 
+            this.fasestorneosTableAdapter.ClearBeforeFill = true;
+            // 
+            // ciudadesBindingSource
+            // 
+            this.ciudadesBindingSource.DataMember = "ciudades";
+            this.ciudadesBindingSource.DataSource = this.db_sifreestyleDataSet;
+            // 
+            // ciudadesTableAdapter
+            // 
+            this.ciudadesTableAdapter.ClearBeforeFill = true;
+            // 
+            // ciudadeshastorneoBindingSource
+            // 
+            this.ciudadeshastorneoBindingSource.DataMember = "ciudades_has_torneo";
+            this.ciudadeshastorneoBindingSource.DataSource = this.db_sifreestyleDataSet;
+            // 
+            // ciudades_has_torneoTableAdapter
+            // 
+            this.ciudades_has_torneoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tipotorneoBindingSource
+            // 
+            this.tipotorneoBindingSource.DataMember = "tipotorneo";
+            this.tipotorneoBindingSource.DataSource = this.db_sifreestyleDataSet;
+            // 
+            // tipotorneoTableAdapter
+            // 
+            this.tipotorneoTableAdapter.ClearBeforeFill = true;
+            // 
+            // txtLugar
+            // 
+            this.txtLugar.Location = new System.Drawing.Point(385, 308);
+            this.txtLugar.Name = "txtLugar";
+            this.txtLugar.Size = new System.Drawing.Size(100, 20);
+            this.txtLugar.TabIndex = 23;
+            // 
+            // lblLugar
+            // 
+            this.lblLugar.AutoSize = true;
+            this.lblLugar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLugar.Location = new System.Drawing.Point(382, 270);
+            this.lblLugar.Name = "lblLugar";
+            this.lblLugar.Size = new System.Drawing.Size(49, 17);
+            this.lblLugar.TabIndex = 24;
+            this.lblLugar.Text = "Lugar:";
+            this.lblLugar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RegistroTorneo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.botonsito);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblLugar);
+            this.Controls.Add(this.txtLugar);
+            this.Controls.Add(this.btnCrearTorneo);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.listBoxFase);
+            this.Controls.Add(this.timeHora);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbTipo);
+            this.Controls.Add(this.cbCiudad);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.numCupos);
+            this.Controls.Add(this.dateFin);
+            this.Controls.Add(this.dateInicio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "RegistroTorneo";
@@ -376,7 +431,12 @@
             this.Load += new System.EventHandler(this.RegistroTorneo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCupos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasestorneosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadeshastorneoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipotorneoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,29 +451,38 @@
         private System.Windows.Forms.ToolStripMenuItem todosLosTorneosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuTorneo;
         private System.Windows.Forms.ToolStripMenuItem registrarTorneoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem cancelarTorneoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem participantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem juradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarJuradoToolStripMenuItem;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.DateTimePicker dateInicio;
+        private System.Windows.Forms.DateTimePicker dateFin;
+        private System.Windows.Forms.NumericUpDown numCupos;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbCiudad;
+        private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.DateTimePicker timeHora;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button botonsito;
+        private System.Windows.Forms.Button btnCrearTorneo;
+        private System.Windows.Forms.CheckedListBox listBoxFase;
+        private db_sifreestyleDataSet db_sifreestyleDataSet;
+        private System.Windows.Forms.BindingSource fasestorneosBindingSource;
+        private db_sifreestyleDataSetTableAdapters.fasestorneosTableAdapter fasestorneosTableAdapter;
+        private System.Windows.Forms.BindingSource ciudadesBindingSource;
+        private db_sifreestyleDataSetTableAdapters.ciudadesTableAdapter ciudadesTableAdapter;
+        private System.Windows.Forms.BindingSource ciudadeshastorneoBindingSource;
+        private db_sifreestyleDataSetTableAdapters.ciudades_has_torneoTableAdapter ciudades_has_torneoTableAdapter;
+        private System.Windows.Forms.BindingSource tipotorneoBindingSource;
+        private db_sifreestyleDataSetTableAdapters.tipotorneoTableAdapter tipotorneoTableAdapter;
+        private System.Windows.Forms.TextBox txtLugar;
+        private System.Windows.Forms.Label lblLugar;
     }
 }
