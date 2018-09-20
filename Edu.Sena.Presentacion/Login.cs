@@ -30,6 +30,7 @@ namespace Edu.Sena.Presentacion
         {
             string retorno1 = sesion.Rol1(txtUsuario.Text, txtContraseña.Text);
             string retorno = sesion.rol2(txtUsuario.Text, txtContraseña.Text);
+            string retorno2 = sesion.rol3(txtUsuario.Text, txtContraseña.Text);
             if (txtUsuario.Text=="")
             {
                 MessageBox.Show("Ingrese su cedula");
@@ -51,6 +52,12 @@ namespace Edu.Sena.Presentacion
                     {
                         Form1 menu = new Form1();
                         menu.Show();
+                        this.Hide();
+                    }
+                    else if (retorno2 !="")
+                    {
+                        registroUsuario r = new registroUsuario();
+                        r.Show();
                         this.Hide();
                     }
                     else

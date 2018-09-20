@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(registroUsuario));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -44,15 +45,31 @@
             this.txtCelular = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCedula = new System.Windows.Forms.TextBox();
-            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.Cedula = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
             this.cbROL = new System.Windows.Forms.ComboBox();
             this.btnRegistro = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.cbGenero = new System.Windows.Forms.ComboBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.db_sifreestyleDataSet2 = new Edu.Sena.Presentacion.db_sifreestyleDataSet2();
+            this.generoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.generoTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSet2TableAdapters.generoTableAdapter();
+            this.db_sifreestyleDataSet3 = new Edu.Sena.Presentacion.db_sifreestyleDataSet3();
+            this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ciudadesTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSet3TableAdapters.ciudadesTableAdapter();
+            this.db_sifreestyleDataSet4 = new Edu.Sena.Presentacion.db_sifreestyleDataSet4();
+            this.rolesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rolesTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSet4TableAdapters.rolesTableAdapter();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -221,26 +238,14 @@
             this.txtNombre.Size = new System.Drawing.Size(159, 20);
             this.txtNombre.TabIndex = 19;
             // 
-            // txtCedula
+            // Cedula
             // 
-            this.txtCedula.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.txtCedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCedula.Location = new System.Drawing.Point(64, 257);
-            this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(159, 20);
-            this.txtCedula.TabIndex = 20;
-            // 
-            // dtpFechaNacimiento
-            // 
-            this.dtpFechaNacimiento.CalendarForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.dtpFechaNacimiento.CalendarMonthBackground = System.Drawing.SystemColors.ScrollBar;
-            this.dtpFechaNacimiento.CalendarTitleBackColor = System.Drawing.SystemColors.ScrollBar;
-            this.dtpFechaNacimiento.CalendarTitleForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.dtpFechaNacimiento.CalendarTrailingForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(293, 257);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(159, 20);
-            this.dtpFechaNacimiento.TabIndex = 21;
+            this.Cedula.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Cedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Cedula.Location = new System.Drawing.Point(64, 257);
+            this.Cedula.Name = "Cedula";
+            this.Cedula.Size = new System.Drawing.Size(159, 20);
+            this.Cedula.TabIndex = 20;
             // 
             // label9
             // 
@@ -257,22 +262,28 @@
             // cbCiudad
             // 
             this.cbCiudad.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbCiudad.DataSource = this.ciudadesBindingSource;
+            this.cbCiudad.DisplayMember = "nombre";
             this.cbCiudad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbCiudad.FormattingEnabled = true;
             this.cbCiudad.Location = new System.Drawing.Point(493, 439);
             this.cbCiudad.Name = "cbCiudad";
             this.cbCiudad.Size = new System.Drawing.Size(109, 21);
             this.cbCiudad.TabIndex = 24;
+            this.cbCiudad.ValueMember = "codigoCiudad";
             // 
             // cbROL
             // 
             this.cbROL.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbROL.DataSource = this.rolesBindingSource;
+            this.cbROL.DisplayMember = "tipo";
             this.cbROL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbROL.FormattingEnabled = true;
             this.cbROL.Location = new System.Drawing.Point(633, 440);
             this.cbROL.Name = "cbROL";
             this.cbROL.Size = new System.Drawing.Size(109, 21);
             this.cbROL.TabIndex = 25;
+            this.cbROL.ValueMember = "idRol";
             // 
             // btnRegistro
             // 
@@ -303,12 +314,73 @@
             // cbGenero
             // 
             this.cbGenero.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbGenero.DataSource = this.generoBindingSource;
+            this.cbGenero.DisplayMember = "tipo";
             this.cbGenero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbGenero.FormattingEnabled = true;
             this.cbGenero.Location = new System.Drawing.Point(293, 350);
             this.cbGenero.Name = "cbGenero";
             this.cbGenero.Size = new System.Drawing.Size(159, 21);
             this.cbGenero.TabIndex = 28;
+            this.cbGenero.ValueMember = "idGenero";
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtContraseña.Location = new System.Drawing.Point(538, 107);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.Size = new System.Drawing.Size(159, 20);
+            this.txtContraseña.TabIndex = 29;
+            // 
+            // db_sifreestyleDataSet2
+            // 
+            this.db_sifreestyleDataSet2.DataSetName = "db_sifreestyleDataSet2";
+            this.db_sifreestyleDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // generoBindingSource
+            // 
+            this.generoBindingSource.DataMember = "genero";
+            this.generoBindingSource.DataSource = this.db_sifreestyleDataSet2;
+            // 
+            // generoTableAdapter
+            // 
+            this.generoTableAdapter.ClearBeforeFill = true;
+            // 
+            // db_sifreestyleDataSet3
+            // 
+            this.db_sifreestyleDataSet3.DataSetName = "db_sifreestyleDataSet3";
+            this.db_sifreestyleDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ciudadesBindingSource
+            // 
+            this.ciudadesBindingSource.DataMember = "ciudades";
+            this.ciudadesBindingSource.DataSource = this.db_sifreestyleDataSet3;
+            // 
+            // ciudadesTableAdapter
+            // 
+            this.ciudadesTableAdapter.ClearBeforeFill = true;
+            // 
+            // db_sifreestyleDataSet4
+            // 
+            this.db_sifreestyleDataSet4.DataSetName = "db_sifreestyleDataSet4";
+            this.db_sifreestyleDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rolesBindingSource
+            // 
+            this.rolesBindingSource.DataMember = "roles";
+            this.rolesBindingSource.DataSource = this.db_sifreestyleDataSet4;
+            // 
+            // rolesTableAdapter
+            // 
+            this.rolesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(282, 257);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaNacimiento.TabIndex = 30;
             // 
             // registroUsuario
             // 
@@ -316,14 +388,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 543);
+            this.Controls.Add(this.dtpFechaNacimiento);
+            this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.cbGenero);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.cbROL);
             this.Controls.Add(this.cbCiudad);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dtpFechaNacimiento);
-            this.Controls.Add(this.txtCedula);
+            this.Controls.Add(this.Cedula);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtCelular);
@@ -343,6 +416,12 @@
             this.Text = "registroUsuario";
             this.Load += new System.EventHandler(this.registroUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.generoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rolesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,13 +444,23 @@
         private System.Windows.Forms.TextBox txtCelular;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCedula;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.TextBox Cedula;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbCiudad;
         private System.Windows.Forms.ComboBox cbROL;
         private System.Windows.Forms.Button btnRegistro;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ComboBox cbGenero;
+        private System.Windows.Forms.TextBox txtContraseña;
+        private db_sifreestyleDataSet2 db_sifreestyleDataSet2;
+        private System.Windows.Forms.BindingSource generoBindingSource;
+        private db_sifreestyleDataSet2TableAdapters.generoTableAdapter generoTableAdapter;
+        private db_sifreestyleDataSet3 db_sifreestyleDataSet3;
+        private System.Windows.Forms.BindingSource ciudadesBindingSource;
+        private db_sifreestyleDataSet3TableAdapters.ciudadesTableAdapter ciudadesTableAdapter;
+        private db_sifreestyleDataSet4 db_sifreestyleDataSet4;
+        private System.Windows.Forms.BindingSource rolesBindingSource;
+        private db_sifreestyleDataSet4TableAdapters.rolesTableAdapter rolesTableAdapter;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
     }
 }

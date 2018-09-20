@@ -55,5 +55,26 @@ namespace Edu.Sena.Logica
                 return "";
             }
         }
+        public String rol3(string usuario, string clave)
+        {
+            try
+            {
+                Conexion.comando = new SqlCommand("select * from usuarios where usuario.idRol = 3 and usuarios.contraseña = '" + clave + "' and usuarios.cedula = '" + usuario + "'", conecte());
+                Conexion.lecturaDatos = comando.ExecuteReader();
+                if (Conexion.lecturaDatos.Read())
+                {
+                    return Conexion.lecturaDatos[0].ToString();
+                }
+                else
+                {
+                    Console.WriteLine("Usuario o contraseña incorrecta");
+                    return "";
+                }
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
     }
 }
