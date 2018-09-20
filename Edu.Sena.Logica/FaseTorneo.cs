@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Edu.Sena.Datos;
 
 namespace Edu.Sena.Logica
 {
-    class FaseTorneo
+    public class FaseTorneo
     {
         private int idFase;
         private string nombreFase;
@@ -23,5 +24,14 @@ namespace Edu.Sena.Logica
             this.idFase = idFase;
             this.nombreFase = nombreFase;
         }
+
+        public void registrarFase(string name)
+        {
+
+            Conexion.Conectar();
+            string agg = "INSERT INTO fasestorneos(nombreFas) VALUES('" + name + "')";
+            Conexion.Ejecutar(agg);
+        }
+
     }
 }

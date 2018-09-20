@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Edu.Sena.Logica;
 
 namespace Edu.Sena.Presentacion
 {
@@ -35,6 +36,15 @@ namespace Edu.Sena.Presentacion
             RegistroTorneo r = new RegistroTorneo();
             r.Show();
             this.Hide();
+        }
+
+        private void btnAggFase_Click(object sender, EventArgs e)
+        {
+            FaseTorneo f = new FaseTorneo();
+            f.registrarFase(txtNombreFase.Text);
+           MessageBox.Show("Se ha registrado una nueva fase con exito");
+            txtNombreFase.Text = "";
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Edu.Sena.Logica
 {
-    class TipoTorneo
+    public class TipoTorneo
     {
         private int idTipo;
         private string tipo;

@@ -44,5 +44,16 @@ namespace Edu.Sena.Presentacion.Properties {
                 return ((string)(this["sifreestyleConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=PC-PC\\SQLEXPRESS;Initial Catalog=db_sifreestyle;Integrated Security=T" +
+            "rue")]
+        public string db_sifreestyleConnectionString1 {
+            get {
+                return ((string)(this["db_sifreestyleConnectionString1"]));
+            }
+        }
     }
 }
