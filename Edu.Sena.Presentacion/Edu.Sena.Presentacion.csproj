@@ -45,17 +45,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AñadirFase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AñadirFase.Designer.cs">
       <DependentUpon>AñadirFase.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of b3f1b0c... del Niquillo
     <Compile Include="db_sifreestyleDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_sifreestyleDataSet.xsd</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="db_sifreestyleDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_sifreestyleDataSet1.xsd</DependentUpon>
+    </Compile>
+>>>>>>> parent of b3f1b0c... del Niquillo
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +87,15 @@
     <Compile Include="RegistroTorneo.Designer.cs">
       <DependentUpon>RegistroTorneo.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="registroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registroUsuario.Designer.cs">
+      <DependentUpon>registroUsuario.cs</DependentUpon>
+    </Compile>
+>>>>>>> parent of b3f1b0c... del Niquillo
     <Compile Include="TorneosActivos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +123,12 @@
     <EmbeddedResource Include="RegistroTorneo.resx">
       <DependentUpon>RegistroTorneo.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="registroUsuario.resx">
+      <DependentUpon>registroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> parent of b3f1b0c... del Niquillo
     <EmbeddedResource Include="TorneosActivos.resx">
       <DependentUpon>TorneosActivos.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +143,20 @@
     <None Include="db_sifreestyleDataSet.xss">
       <DependentUpon>db_sifreestyleDataSet.xsd</DependentUpon>
     </None>
+<<<<<<< HEAD
+=======
+    <None Include="db_sifreestyleDataSet1.xsc">
+      <DependentUpon>db_sifreestyleDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="db_sifreestyleDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_sifreestyleDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_sifreestyleDataSet1.xss">
+      <DependentUpon>db_sifreestyleDataSet1.xsd</DependentUpon>
+    </None>
+>>>>>>> parent of b3f1b0c... del Niquillo
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

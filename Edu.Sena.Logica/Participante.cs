@@ -23,6 +23,7 @@ namespace Edu.Sena.Logica
         {
             this.nombreArtistico = nombreArtistico;
         }
+<<<<<<< HEAD
 
         public DataTable participantesTorneo(int idTorneo)
         {
@@ -37,5 +38,7 @@ namespace Edu.Sena.Logica
             DataTable d = Conexion.consultar(consulta);
             return d;
         }
+=======
+>>>>>>> parent of b3f1b0c... del Niquillo
     }
 }

@@ -5,18 +5,18 @@ using System.Data.SqlClient;
 
 namespace Edu.Sena.Logica
 {
-    public class Usuario
+    public class Usuario : Conexion
     {
         private long cedula;
         private string nombres;
         private string apellidos;
         private long celular;
         private string correo;
+        private string nombreArtistico;
         private DateTime fechaNacimiento;
         /*Corregir en el D.Clases*/
        // private char genero;
         private string contrasena;
-        private string nombreArtistico;
         private int ciudad;
         private int rol;
         private int genero;
@@ -30,24 +30,21 @@ namespace Edu.Sena.Logica
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public long Celular { get => celular; set => celular = value; }
         public string Correo { get => correo; set => correo = value; }
+        public string NombreArtistico { get => nombreArtistico; set => nombreArtistico = value; }
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public int Genero { get => genero; set => genero = value; }
         public string Contrasena { get => contrasena; set => contrasena = value; }
         public int Ciudad { get => ciudad; set => ciudad = value; }
-        public string NombreArtistico { get => nombreArtistico; set => nombreArtistico = value; }
         public List<Batalla> BatallasAsistidas { get => batallasAsistidas; set => batallasAsistidas = value; }
         public int Rol { get => rol; set => rol = value; }
         internal List<Torneo> TorneosParticipados { get => torneosParticipados; set => torneosParticipados = value; }
 
-
-        public void insertar(long cedula, string nombre, string apellido, long celular, string correo, string nombreArtis, string clave, int idRol, int idCiu, int idGen)
+        public void insertar()
         {
-            Conexion c = new Conexion();
-            string sentencia = "  insert into usuarios values (" + cedula + ",'"+nombre+"','"+apellido+"','1999-05-01', "+celular+" ,'"+correo+"','"+nombreArtis+"','"+clave+"',"+idRol+","+idCiu+","+idGen+")";
-            SqlCommand comand = new SqlCommand(sentencia, c.conecte());
-            comand.ExecuteNonQuery();
+            sentencia = ("insert into usuarios( cedula,nombres,apellidos,fechaNacimiento,genero,celular,correo,nombreArtistico, contraseña,idRol,idCiudad) values ("+cedula+", '"+nombres+"', '"+apellidos+"', '"+fechaNacimiento+"', '"+genero+"', '"+celular+"', '"+nombreArtistico+"', '"+correo+"' ,'"+contrasena+"','"+rol+"', '"+ciudad+"')");
+            Conexion.Ejecutar(sentencia);
         }
-
+        
 
     }
 }
