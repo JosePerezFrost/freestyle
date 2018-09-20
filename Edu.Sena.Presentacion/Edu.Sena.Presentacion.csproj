@@ -51,6 +51,11 @@
     <Compile Include="AñadirFase.Designer.cs">
       <DependentUpon>AñadirFase.cs</DependentUpon>
     </Compile>
+    <Compile Include="db_sifreestyleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_sifreestyleDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +106,17 @@
     <EmbeddedResource Include="TorneosActivos.resx">
       <DependentUpon>TorneosActivos.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="db_sifreestyleDataSet.xsc">
+      <DependentUpon>db_sifreestyleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_sifreestyleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_sifreestyleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_sifreestyleDataSet.xss">
+      <DependentUpon>db_sifreestyleDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,6 +131,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Edu.Sena.Datos\Edu.Sena.Datos.csproj">
+      <Project>{D85A63F0-9323-46F5-B010-D6F07B706127}</Project>
+      <Name>Edu.Sena.Datos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Edu.Sena.Logica\Edu.Sena.Logica.csproj">
       <Project>{4cf8e21c-9b16-4e12-bb29-4fa766fb27af}</Project>
       <Name>Edu.Sena.Logica</Name>

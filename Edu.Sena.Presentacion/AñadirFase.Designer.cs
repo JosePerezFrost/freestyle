@@ -43,6 +43,7 @@
             this.lblAggFase = new System.Windows.Forms.Label();
             this.lblNombreFase = new System.Windows.Forms.Label();
             this.txtNombreFase = new System.Windows.Forms.TextBox();
+            this.btnAggFase = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@
             this.usuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(70, 450);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,7 +68,7 @@
             this.todosLosTorneosToolStripMenuItem});
             this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
             this.torneosToolStripMenuItem.Text = "Torneos";
             // 
             // estadisticasTorneosToolStripMenuItem
@@ -96,21 +97,21 @@
             // MenuTorneo
             // 
             this.MenuTorneo.Name = "MenuTorneo";
-            this.MenuTorneo.Size = new System.Drawing.Size(180, 22);
+            this.MenuTorneo.Size = new System.Drawing.Size(161, 22);
             this.MenuTorneo.Text = "Torneos";
             this.MenuTorneo.Click += new System.EventHandler(this.MenuTorneo_Click);
             // 
             // registrarTorneoToolStripMenuItem1
             // 
             this.registrarTorneoToolStripMenuItem1.Name = "registrarTorneoToolStripMenuItem1";
-            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.registrarTorneoToolStripMenuItem1.Text = "Registrar Torneo";
             this.registrarTorneoToolStripMenuItem1.Click += new System.EventHandler(this.registrarTorneoToolStripMenuItem1_Click);
             // 
             // cancelarTorneoToolStripMenuItem1
             // 
             this.cancelarTorneoToolStripMenuItem1.Name = "cancelarTorneoToolStripMenuItem1";
-            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.cancelarTorneoToolStripMenuItem1.Text = "Cancelar Torneo";
             // 
             // usuariosToolStripMenuItem
@@ -120,7 +121,7 @@
             this.juradosToolStripMenuItem});
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // participantesToolStripMenuItem
@@ -170,11 +171,22 @@
             this.txtNombreFase.Size = new System.Drawing.Size(203, 20);
             this.txtNombreFase.TabIndex = 9;
             // 
+            // btnAggFase
+            // 
+            this.btnAggFase.Location = new System.Drawing.Point(356, 326);
+            this.btnAggFase.Name = "btnAggFase";
+            this.btnAggFase.Size = new System.Drawing.Size(124, 23);
+            this.btnAggFase.TabIndex = 10;
+            this.btnAggFase.Text = "Agregar";
+            this.btnAggFase.UseVisualStyleBackColor = true;
+            this.btnAggFase.Click += new System.EventHandler(this.btnAggFase_Click);
+            // 
             // AñadirFase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAggFase);
             this.Controls.Add(this.txtNombreFase);
             this.Controls.Add(this.lblNombreFase);
             this.Controls.Add(this.lblAggFase);
@@ -205,5 +217,6 @@
         private System.Windows.Forms.Label lblAggFase;
         private System.Windows.Forms.Label lblNombreFase;
         private System.Windows.Forms.TextBox txtNombreFase;
+        private System.Windows.Forms.Button btnAggFase;
     }
 }

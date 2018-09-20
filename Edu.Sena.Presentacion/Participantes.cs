@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Edu.Sena.Logica;
 
 namespace Edu.Sena.Presentacion
 {
     public partial class Participantes : Form
     {
+        Participante par = new Participante();
         public Participantes()
         {
             InitializeComponent();
@@ -37,6 +39,12 @@ namespace Edu.Sena.Presentacion
             RegistroTorneo r = new RegistroTorneo();
             r.Show();
             this.Hide();
+        }
+
+        private void Participantes_Load(object sender, EventArgs e)
+        {
+            TorneosActivos t = new TorneosActivos();
+            DataTable d = par.participantesTorneo(t.IdTor);
         }
     }
 }

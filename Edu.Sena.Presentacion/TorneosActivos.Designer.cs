@@ -40,17 +40,12 @@
             this.participantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.juradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarJuradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tableTorneoActivos = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.tableTorneos = new System.Windows.Forms.DataGridView();
+            this.btnParticipantes = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colCancelar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
-            this.tableTorneoActivos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableTorneos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -148,98 +143,6 @@
             this.asignarJuradoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.asignarJuradoToolStripMenuItem.Text = "Asignar Jurado";
             // 
-            // tableTorneoActivos
-            // 
-            this.tableTorneoActivos.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableTorneoActivos.ColumnCount = 7;
-            this.tableTorneoActivos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55F));
-            this.tableTorneoActivos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableTorneoActivos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableTorneoActivos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableTorneoActivos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
-            this.tableTorneoActivos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
-            this.tableTorneoActivos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableTorneoActivos.Controls.Add(this.label1, 0, 0);
-            this.tableTorneoActivos.Controls.Add(this.label2, 1, 0);
-            this.tableTorneoActivos.Controls.Add(this.label3, 2, 0);
-            this.tableTorneoActivos.Controls.Add(this.label4, 3, 0);
-            this.tableTorneoActivos.Controls.Add(this.label6, 5, 0);
-            this.tableTorneoActivos.Controls.Add(this.label7, 6, 0);
-            this.tableTorneoActivos.Controls.Add(this.label5, 4, 0);
-            this.tableTorneoActivos.Location = new System.Drawing.Point(98, 162);
-            this.tableTorneoActivos.Name = "tableTorneoActivos";
-            this.tableTorneoActivos.RowCount = 2;
-            this.tableTorneoActivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.57377F));
-            this.tableTorneoActivos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.42623F));
-            this.tableTorneoActivos.Size = new System.Drawing.Size(513, 94);
-            this.tableTorneoActivos.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 1);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 14);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "IdTorneo";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.UseMnemonic = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(80, 1);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(142, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ciudad";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 1);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Fase Actual";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(358, 1);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Tipo ";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(433, 1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Estado";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(271, 1);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 14);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Fecha Finalizacion";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -250,13 +153,38 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Torneos";
             // 
+            // tableTorneos
+            // 
+            this.tableTorneos.AllowUserToOrderColumns = true;
+            this.tableTorneos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableTorneos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnParticipantes,
+            this.colCancelar});
+            this.tableTorneos.Location = new System.Drawing.Point(73, 160);
+            this.tableTorneos.Name = "tableTorneos";
+            this.tableTorneos.Size = new System.Drawing.Size(715, 243);
+            this.tableTorneos.TabIndex = 4;
+            this.tableTorneos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableTorneos_CellContentClick);
+            // 
+            // btnParticipantes
+            // 
+            this.btnParticipantes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.btnParticipantes.HeaderText = "Participantes";
+            this.btnParticipantes.Name = "btnParticipantes";
+            this.btnParticipantes.Width = 74;
+            // 
+            // colCancelar
+            // 
+            this.colCancelar.HeaderText = "Cancelar";
+            this.colCancelar.Name = "colCancelar";
+            // 
             // TorneosActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tableTorneos);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.tableTorneoActivos);
             this.Controls.Add(this.label8);
             this.Name = "TorneosActivos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -264,8 +192,7 @@
             this.Load += new System.EventHandler(this.TorneosActivos_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tableTorneoActivos.ResumeLayout(false);
-            this.tableTorneoActivos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableTorneos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,14 +212,9 @@
         private System.Windows.Forms.ToolStripMenuItem participantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem juradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarJuradoToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableTorneoActivos;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView tableTorneos;
+        private System.Windows.Forms.DataGridViewButtonColumn btnParticipantes;
+        private System.Windows.Forms.DataGridViewButtonColumn colCancelar;
     }
 }

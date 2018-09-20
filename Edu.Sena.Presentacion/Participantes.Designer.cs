@@ -55,7 +55,7 @@
             this.usuariosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(70, 450);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,7 +67,7 @@
             this.todosLosTorneosToolStripMenuItem});
             this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
             this.torneosToolStripMenuItem.Text = "Torneos";
             // 
             // estadisticasTorneosToolStripMenuItem
@@ -96,14 +96,14 @@
             // MenuTorneo
             // 
             this.MenuTorneo.Name = "MenuTorneo";
-            this.MenuTorneo.Size = new System.Drawing.Size(180, 22);
+            this.MenuTorneo.Size = new System.Drawing.Size(161, 22);
             this.MenuTorneo.Text = "Torneos";
             this.MenuTorneo.Click += new System.EventHandler(this.MenuTorneo_Click);
             // 
             // registrarTorneoToolStripMenuItem1
             // 
             this.registrarTorneoToolStripMenuItem1.Name = "registrarTorneoToolStripMenuItem1";
-            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registrarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.registrarTorneoToolStripMenuItem1.Text = "Registrar Torneo";
             this.registrarTorneoToolStripMenuItem1.Click += new System.EventHandler(this.registrarTorneoToolStripMenuItem1_Click);
             // 
@@ -126,7 +126,7 @@
             // participantesToolStripMenuItem
             // 
             this.participantesToolStripMenuItem.Name = "participantesToolStripMenuItem";
-            this.participantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.participantesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.participantesToolStripMenuItem.Text = "Participantes";
             // 
             // juradosToolStripMenuItem
@@ -134,7 +134,7 @@
             this.juradosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.asignarJuradoToolStripMenuItem});
             this.juradosToolStripMenuItem.Name = "juradosToolStripMenuItem";
-            this.juradosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.juradosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.juradosToolStripMenuItem.Text = "Jurados";
             // 
             // asignarJuradoToolStripMenuItem
@@ -171,6 +171,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "Participantes";
             this.Text = "Participantes";
+            this.Load += new System.EventHandler(this.Participantes_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

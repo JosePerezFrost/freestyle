@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Edu.Sena.Logica
 {
-    class Estado
+    public class Estado
     {
         private int idEstado;
         private string nombre;

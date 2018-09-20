@@ -8,7 +8,7 @@ using System.Data;
 
 namespace Edu.Sena.Logica
 {
-    class Rol
+   public  class Rol
     {
         private int id;
         private string tipo;

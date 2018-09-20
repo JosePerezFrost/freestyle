@@ -69,6 +69,23 @@ namespace Edu.Sena.Logica
                 MessageBox.Show("No se lleno el combo box");
             }
         }
+        public void llenarChecked(CheckedListBox cLB)
+        {
+            try { 
+            cmd = new SqlCommand("SELECT * FROM fasestorneos",conecte());
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                cLB.Items.Add(dr["nombreFas"]).ToString();
+                cLB.SelectedValue = dr["idFase"].ToString();
+            }
+            dr.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se lleno el checked");
+            }
+        }
 
     }
 }

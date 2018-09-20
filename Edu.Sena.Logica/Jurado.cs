@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Edu.Sena.Logica
 {
-    class Jurado : Usuario
+    public class Jurado : Usuario
     {
         private string contraseña;
 
