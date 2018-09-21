@@ -14,10 +14,18 @@ namespace Edu.Sena.Presentacion
     public partial class Participantes : Form
     {
         Participante par = new Participante();
+        int idTorneo = 0;
         public Participantes()
         {
             InitializeComponent();
         }
+
+        public Participantes(int idTor)
+        {
+            InitializeComponent();
+            this.idTorneo = idTor;
+        }
+
 
         private void añadirFaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -43,8 +51,22 @@ namespace Edu.Sena.Presentacion
 
         private void Participantes_Load(object sender, EventArgs e)
         {
-            TorneosActivos t = new TorneosActivos();
-            DataTable d = par.participantesTorneo(t.IdTor);
+            if (idTorneo != 0)
+            {
+                tableParticipantes.DataSource = par.participantesTorneo(idTorneo);
+
+            }else
+            {
+                tableParticipantes.DataSource = par.consultarTodo();
+                lblParticipante.Text = "Participantes Activos";
+            }
+        }
+
+        private void nuevaBatallaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarBatalla r = new RegistrarBatalla();
+            r.Show();
+            this.Hide();
         }
     }
 }
