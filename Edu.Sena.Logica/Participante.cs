@@ -12,7 +12,7 @@ namespace Edu.Sena.Logica
         private string nombreArtistico;
         private List<Calificacion> calificaciones;
 
-        public string NombreArtistico { get => nombreArtistico; set => nombreArtistico = value; }
+        public string Nombreartistico { get => nombreArtistico; set => nombreArtistico = value; }
         internal List<Calificacion> Calificaciones { get => calificaciones; set => calificaciones = value; }
 
         public Participante()

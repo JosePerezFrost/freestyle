@@ -21,7 +21,7 @@ namespace Edu.Sena.Datos
 
         public static void Conectar()
         {
-            cadena = new SqlConnection(@"Data Source=pc-Pc\SQLEXPRESS;Initial Catalog=db_sifreestyle;Integrated Security=True");
+            cadena = new SqlConnection(@"Data Source=SALAZARNICOLAS\SQLEXPRESS;Initial Catalog=db_sifreestyle;Integrated Security=True");
             comando = new SqlCommand();
             comando.Connection = cadena;
         }
@@ -44,7 +44,7 @@ namespace Edu.Sena.Datos
             lecturaDatos.Close();
             return Tabla;
         }
-        private string con = @"Data Source=pc-Pc\SQLEXPRESS;Initial Catalog=db_sifreestyle;Integrated Security=True";
+        private string con = @"Data Source=SALAZARNICOLAS\SQLEXPRESS;Initial Catalog=db_sifreestyle;Integrated Security=True";
         public string Cnn
         {
             get { return con; }

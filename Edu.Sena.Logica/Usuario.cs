@@ -24,8 +24,7 @@ namespace Edu.Sena.Logica
        // private List<Rol> rol;
         private List<Torneo> torneosParticipados;
         private List<Batalla> batallasAsistidas;
-        private string sentencia;
-        public long Cedula { get => cedula; set => cedula = value; }
+        public long Ceula { get => cedula; set => cedula = value; }
         public string Nombres { get => nombres; set => nombres = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public long Celular { get => celular; set => celular = value; }
