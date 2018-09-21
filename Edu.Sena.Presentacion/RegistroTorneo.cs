@@ -13,7 +13,7 @@ namespace Edu.Sena.Presentacion
 {
     public partial class RegistroTorneo : Form
     {
-        Form1 f = new Form1();
+        Administrador f = new Administrador();
         public RegistroTorneo()
         {
             InitializeComponent();
@@ -76,6 +76,20 @@ namespace Edu.Sena.Presentacion
                 
             }
                         
+        }
+
+        private void participantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Participantes p = new Participantes();
+            p.Show();
+            this.Hide();
+        }
+
+        private void nuevaBatallaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarBatalla r = new RegistrarBatalla();
+            r.Show();
+            this.Hide();
         }
     }
 }

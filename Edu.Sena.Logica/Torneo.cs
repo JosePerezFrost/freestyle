@@ -52,18 +52,18 @@ namespace Edu.Sena.Logica
             DataTable d = Conexion.consultar(cadena);
             return d;
         }
-            
-        public Boolean registrarToreno(string nombre, string lugar , int cupos, DateTime fIni, DateTime fFin, DateTime horaI, int idTipo, int idCiudad)
+
+        public Boolean registrarToreno(string nombre, string lugar, int cupos, DateTime fIni, DateTime fFin, DateTime horaI, int idTipo, int idCiudad)
         {
-            
-            string consulta = "INSERT INTO torneos([nombreTorneo],[lugar],[cupos],[fechaInicio],[fechaFin],[horaInicio],[idTipoTorneo],[idEstado])"+
-                "VALUES ('"+nombre+"','"+lugar+"',"+cupos+",'"+fIni+"','"+fFin+"','"+horaI+"',"+idTipo+","+1+")";
+
+            string consulta = "INSERT INTO torneos([nombreTorneo],[lugar],[cupos],[fechaInicio],[fechaFin],[horaInicio],[idTipoTorneo],[idEstado])" +
+                "VALUES ('" + nombre + "','" + lugar + "'," + cupos + ",'" + fIni + "','" + fFin + "','" + horaI + "'," + idTipo + "," + 1 + ")";
             SqlCommand comand = new SqlCommand(consulta, c.conecte());
             int cant = comand.ExecuteNonQuery();
             if (cant == 1)
             {
                 int idTor = buscarUltimoTorneo();
-                string con2 = "INSERT INTO ciudades_has_torneo([idCiudad],[idTorneo]) VALUES("+idCiudad+","+idTor+")";
+                string con2 = "INSERT INTO ciudades_has_torneo([idCiudad],[idTorneo]) VALUES(" + idCiudad + "," + idTor + ")";
                 SqlCommand comand2 = new SqlCommand(con2, c.conecte());
                 comand2.ExecuteNonQuery();
                 MessageBox.Show("Se Ha Registrado El Torneo Exitosamente");
@@ -78,7 +78,7 @@ namespace Edu.Sena.Logica
 
         public int buscarUltimoTorneo()
         {
-            
+
             string consulta = "SELECT * FROM torneos";
             SqlCommand comand = new SqlCommand(consulta, c.conecte());
             DataTable t = new DataTable();
@@ -94,10 +94,35 @@ namespace Edu.Sena.Logica
                         id = Convert.ToInt32(item["idTorneo"].ToString());
                     }
                 }
-               
+
             }
             MessageBox.Show(id.ToString());
             return id;
+        }
+
+        public void cancelarTorneo(string nombreTorneo, int tor)
+        {
+            string q = "UPDATE torneos SET idEstado = 5 WHERE idTorneo =" + tor + " ";
+            SqlCommand cmd = new SqlCommand(q, c.conecte());
+            int res = cmd.ExecuteNonQuery();
+            if (res == 1)
+            {
+                MessageBox.Show("Se Ha Cancelado El Torneo " + nombreTorneo);
+            }
+            else
+            {
+
+                MessageBox.Show("Error Al Cancelar El Torneo");
+            }
+        }
+
+        public DataTable buscarPorId(int id)
+        {
+            string consulta = "SELECT * FROM torneos WHERE idTorneo ="+id+" ";
+            SqlCommand comand = new SqlCommand(consulta, c.conecte());
+            DataTable t = new DataTable();
+            t.Load(comand.ExecuteReader());
+            return t;
         }
 
     }

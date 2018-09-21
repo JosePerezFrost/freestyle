@@ -51,31 +51,33 @@
             this.numCupos = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.cbCiudad = new System.Windows.Forms.ComboBox();
+            this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_sifreestyleDataSet = new Edu.Sena.Presentacion.db_sifreestyleDataSet();
             this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.tipotorneoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.timeHora = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCrearTorneo = new System.Windows.Forms.Button();
             this.listBoxFase = new System.Windows.Forms.CheckedListBox();
-            this.db_sifreestyleDataSet = new Edu.Sena.Presentacion.db_sifreestyleDataSet();
             this.fasestorneosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fasestorneosTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.fasestorneosTableAdapter();
-            this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudadesTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.ciudadesTableAdapter();
             this.ciudadeshastorneoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ciudades_has_torneoTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.ciudades_has_torneoTableAdapter();
-            this.tipotorneoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipotorneoTableAdapter = new Edu.Sena.Presentacion.db_sifreestyleDataSetTableAdapters.tipotorneoTableAdapter();
             this.txtLugar = new System.Windows.Forms.TextBox();
             this.lblLugar = new System.Windows.Forms.Label();
+            this.batallasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaBatallaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCupos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fasestorneosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadeshastorneoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipotorneoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasestorneosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadeshastorneoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -84,10 +86,11 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.torneosToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.batallasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(70, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -99,7 +102,7 @@
             this.todosLosTorneosToolStripMenuItem});
             this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.torneosToolStripMenuItem.Text = "Torneos";
             // 
             // estadisticasTorneosToolStripMenuItem
@@ -144,7 +147,7 @@
             this.juradosToolStripMenuItem});
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // participantesToolStripMenuItem
@@ -152,6 +155,7 @@
             this.participantesToolStripMenuItem.Name = "participantesToolStripMenuItem";
             this.participantesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.participantesToolStripMenuItem.Text = "Participantes";
+            this.participantesToolStripMenuItem.Click += new System.EventHandler(this.participantesToolStripMenuItem_Click);
             // 
             // juradosToolStripMenuItem
             // 
@@ -270,6 +274,16 @@
             this.cbCiudad.TabIndex = 15;
             this.cbCiudad.ValueMember = "codigoCiudad";
             // 
+            // ciudadesBindingSource
+            // 
+            this.ciudadesBindingSource.DataMember = "ciudades";
+            this.ciudadesBindingSource.DataSource = this.db_sifreestyleDataSet;
+            // 
+            // db_sifreestyleDataSet
+            // 
+            this.db_sifreestyleDataSet.DataSetName = "db_sifreestyleDataSet";
+            this.db_sifreestyleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cbTipo
             // 
             this.cbTipo.DataSource = this.tipotorneoBindingSource;
@@ -280,6 +294,11 @@
             this.cbTipo.Size = new System.Drawing.Size(121, 21);
             this.cbTipo.TabIndex = 16;
             this.cbTipo.ValueMember = "idTipo";
+            // 
+            // tipotorneoBindingSource
+            // 
+            this.tipotorneoBindingSource.DataMember = "tipotorneo";
+            this.tipotorneoBindingSource.DataSource = this.db_sifreestyleDataSet;
             // 
             // label7
             // 
@@ -340,11 +359,6 @@
             this.listBoxFase.TabIndex = 20;
             this.listBoxFase.SelectedIndexChanged += new System.EventHandler(this.listBoxFase_SelectedIndexChanged);
             // 
-            // db_sifreestyleDataSet
-            // 
-            this.db_sifreestyleDataSet.DataSetName = "db_sifreestyleDataSet";
-            this.db_sifreestyleDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // fasestorneosBindingSource
             // 
             this.fasestorneosBindingSource.DataMember = "fasestorneos";
@@ -353,11 +367,6 @@
             // fasestorneosTableAdapter
             // 
             this.fasestorneosTableAdapter.ClearBeforeFill = true;
-            // 
-            // ciudadesBindingSource
-            // 
-            this.ciudadesBindingSource.DataMember = "ciudades";
-            this.ciudadesBindingSource.DataSource = this.db_sifreestyleDataSet;
             // 
             // ciudadesTableAdapter
             // 
@@ -371,11 +380,6 @@
             // ciudades_has_torneoTableAdapter
             // 
             this.ciudades_has_torneoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tipotorneoBindingSource
-            // 
-            this.tipotorneoBindingSource.DataMember = "tipotorneo";
-            this.tipotorneoBindingSource.DataSource = this.db_sifreestyleDataSet;
             // 
             // tipotorneoTableAdapter
             // 
@@ -398,6 +402,22 @@
             this.lblLugar.TabIndex = 24;
             this.lblLugar.Text = "Lugar:";
             this.lblLugar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // batallasToolStripMenuItem
+            // 
+            this.batallasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaBatallaToolStripMenuItem});
+            this.batallasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.batallasToolStripMenuItem.Name = "batallasToolStripMenuItem";
+            this.batallasToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
+            this.batallasToolStripMenuItem.Text = "Batallas";
+            // 
+            // nuevaBatallaToolStripMenuItem
+            // 
+            this.nuevaBatallaToolStripMenuItem.Name = "nuevaBatallaToolStripMenuItem";
+            this.nuevaBatallaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaBatallaToolStripMenuItem.Text = "Nueva Batalla";
+            this.nuevaBatallaToolStripMenuItem.Click += new System.EventHandler(this.nuevaBatallaToolStripMenuItem_Click);
             // 
             // RegistroTorneo
             // 
@@ -432,11 +452,11 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCupos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fasestorneosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadeshastorneoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_sifreestyleDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipotorneoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fasestorneosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadeshastorneoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,5 +504,7 @@
         private db_sifreestyleDataSetTableAdapters.tipotorneoTableAdapter tipotorneoTableAdapter;
         private System.Windows.Forms.TextBox txtLugar;
         private System.Windows.Forms.Label lblLugar;
+        private System.Windows.Forms.ToolStripMenuItem batallasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaBatallaToolStripMenuItem;
     }
 }

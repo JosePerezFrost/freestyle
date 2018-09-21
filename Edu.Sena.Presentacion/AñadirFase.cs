@@ -46,5 +46,19 @@ namespace Edu.Sena.Presentacion
             txtNombreFase.Text = "";
 
         }
+
+        private void AñadirFase_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'db_sifreestyleDataSet.fasestorneos' Puede moverla o quitarla según sea necesario.
+            this.fasestorneosTableAdapter.Fill(this.db_sifreestyleDataSet.fasestorneos);
+
+        }
+
+        private void participantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Participantes p = new Participantes();
+            p.Show();
+            this.Hide();
+        }
     }
 }
