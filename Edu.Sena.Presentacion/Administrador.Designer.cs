@@ -1,6 +1,6 @@
 ﻿namespace Edu.Sena.Presentacion
 {
-    partial class Form1
+    partial class Administrador
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Administrador));
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.torneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.estadisticasTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,12 +37,14 @@
             this.todosLosTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuTorneo = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarTorneoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelarTorneoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.participantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.juradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarJuradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lblParticipante = new System.Windows.Forms.Label();
+            this.batallasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaBatalaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,8 +82,7 @@
             // 
             this.todosLosTorneosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuTorneo,
-            this.registrarTorneoToolStripMenuItem1,
-            this.cancelarTorneoToolStripMenuItem1});
+            this.registrarTorneoToolStripMenuItem1});
             this.todosLosTorneosToolStripMenuItem.Name = "todosLosTorneosToolStripMenuItem";
             this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.todosLosTorneosToolStripMenuItem.Text = "Todos los Torneos";
@@ -100,12 +101,6 @@
             this.registrarTorneoToolStripMenuItem1.Text = "Registrar Torneo";
             this.registrarTorneoToolStripMenuItem1.Click += new System.EventHandler(this.registrarTorneoToolStripMenuItem1_Click);
             // 
-            // cancelarTorneoToolStripMenuItem1
-            // 
-            this.cancelarTorneoToolStripMenuItem1.Name = "cancelarTorneoToolStripMenuItem1";
-            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.cancelarTorneoToolStripMenuItem1.Text = "Cancelar Torneo";
-            // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -121,6 +116,7 @@
             this.participantesToolStripMenuItem.Name = "participantesToolStripMenuItem";
             this.participantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.participantesToolStripMenuItem.Text = "Participantes";
+            this.participantesToolStripMenuItem.Click += new System.EventHandler(this.participantesToolStripMenuItem_Click);
             // 
             // juradosToolStripMenuItem
             // 
@@ -142,23 +138,52 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.torneosToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.batallasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(126, 450);
+            this.menuStrip1.Size = new System.Drawing.Size(70, 450);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // Form1
+            // lblParticipante
+            // 
+            this.lblParticipante.AutoSize = true;
+            this.lblParticipante.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParticipante.Location = new System.Drawing.Point(208, 67);
+            this.lblParticipante.Name = "lblParticipante";
+            this.lblParticipante.Size = new System.Drawing.Size(415, 39);
+            this.lblParticipante.TabIndex = 4;
+            this.lblParticipante.Text = "Bienvenido Administrador ";
+            // 
+            // batallasToolStripMenuItem
+            // 
+            this.batallasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaBatalaToolStripMenuItem});
+            this.batallasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.batallasToolStripMenuItem.Name = "batallasToolStripMenuItem";
+            this.batallasToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.batallasToolStripMenuItem.Text = "Batallas";
+            // 
+            // nuevaBatalaToolStripMenuItem
+            // 
+            this.nuevaBatalaToolStripMenuItem.Name = "nuevaBatalaToolStripMenuItem";
+            this.nuevaBatalaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaBatalaToolStripMenuItem.Text = "Nueva Batalla";
+            this.nuevaBatalaToolStripMenuItem.Click += new System.EventHandler(this.nuevaBatalaToolStripMenuItem_Click);
+            // 
+            // Administrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblParticipante);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "Administrador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Administrador_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -175,13 +200,14 @@
         private System.Windows.Forms.ToolStripMenuItem todosLosTorneosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuTorneo;
         private System.Windows.Forms.ToolStripMenuItem registrarTorneoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem cancelarTorneoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem participantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem juradosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignarJuradoToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        
+        private System.Windows.Forms.Label lblParticipante;
+        private System.Windows.Forms.ToolStripMenuItem batallasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaBatalaToolStripMenuItem;
     }
 }
 

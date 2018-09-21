@@ -11,10 +11,10 @@ using Edu.Sena.Logica;
 
 namespace Edu.Sena.Presentacion
 {
-    public partial class Form1 : Form
+    public partial class Administrador : Form
     {
 
-        public Form1()
+        public Administrador()
         {
             InitializeComponent();
         }
@@ -43,6 +43,25 @@ namespace Edu.Sena.Presentacion
             AñadirFase a = new AñadirFase();
             a.Show();
             this.Hide();
+        }
+
+        private void participantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Participantes p = new Participantes();
+            p.Show();
+            this.Hide();
+        }
+
+        private void nuevaBatalaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarBatalla r = new RegistrarBatalla();
+            r.Show();
+            this.Hide();
+        }
+
+        private void Administrador_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

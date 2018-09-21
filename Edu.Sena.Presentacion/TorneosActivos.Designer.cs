@@ -35,7 +35,6 @@
             this.todosLosTorneosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.torneosActivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarTorneoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cancelarTorneoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.participantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.juradosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,6 +43,8 @@
             this.tableTorneos = new System.Windows.Forms.DataGridView();
             this.btnParticipantes = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colCancelar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.batallasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaBatallaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableTorneos)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +55,8 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.torneosToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.batallasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(70, 450);
@@ -69,7 +71,7 @@
             this.todosLosTorneosToolStripMenuItem});
             this.torneosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.torneosToolStripMenuItem.Name = "torneosToolStripMenuItem";
-            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.torneosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.torneosToolStripMenuItem.Text = "Torneos";
             // 
             // estadisticasTorneosToolStripMenuItem
@@ -83,13 +85,13 @@
             this.añadirFaseToolStripMenuItem.Name = "añadirFaseToolStripMenuItem";
             this.añadirFaseToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.añadirFaseToolStripMenuItem.Text = "Añadir Fase";
+            this.añadirFaseToolStripMenuItem.Click += new System.EventHandler(this.añadirFaseToolStripMenuItem_Click);
             // 
             // todosLosTorneosToolStripMenuItem
             // 
             this.todosLosTorneosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.torneosActivosToolStripMenuItem,
-            this.registrarTorneoToolStripMenuItem1,
-            this.cancelarTorneoToolStripMenuItem1});
+            this.registrarTorneoToolStripMenuItem1});
             this.todosLosTorneosToolStripMenuItem.Name = "todosLosTorneosToolStripMenuItem";
             this.todosLosTorneosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.todosLosTorneosToolStripMenuItem.Text = "Todos los Torneos";
@@ -107,12 +109,6 @@
             this.registrarTorneoToolStripMenuItem1.Text = "Registrar Torneo";
             this.registrarTorneoToolStripMenuItem1.Click += new System.EventHandler(this.registrarTorneoToolStripMenuItem1_Click);
             // 
-            // cancelarTorneoToolStripMenuItem1
-            // 
-            this.cancelarTorneoToolStripMenuItem1.Name = "cancelarTorneoToolStripMenuItem1";
-            this.cancelarTorneoToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
-            this.cancelarTorneoToolStripMenuItem1.Text = "Cancelar Torneo";
-            // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -120,7 +116,7 @@
             this.juradosToolStripMenuItem});
             this.usuariosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(113, 19);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // participantesToolStripMenuItem
@@ -128,6 +124,7 @@
             this.participantesToolStripMenuItem.Name = "participantesToolStripMenuItem";
             this.participantesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.participantesToolStripMenuItem.Text = "Participantes";
+            this.participantesToolStripMenuItem.Click += new System.EventHandler(this.participantesToolStripMenuItem_Click);
             // 
             // juradosToolStripMenuItem
             // 
@@ -178,6 +175,22 @@
             this.colCancelar.HeaderText = "Cancelar";
             this.colCancelar.Name = "colCancelar";
             // 
+            // batallasToolStripMenuItem
+            // 
+            this.batallasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaBatallaToolStripMenuItem});
+            this.batallasToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.batallasToolStripMenuItem.Name = "batallasToolStripMenuItem";
+            this.batallasToolStripMenuItem.Size = new System.Drawing.Size(57, 19);
+            this.batallasToolStripMenuItem.Text = "Batallas";
+            // 
+            // nuevaBatallaToolStripMenuItem
+            // 
+            this.nuevaBatallaToolStripMenuItem.Name = "nuevaBatallaToolStripMenuItem";
+            this.nuevaBatallaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaBatallaToolStripMenuItem.Text = "Nueva Batalla";
+            this.nuevaBatallaToolStripMenuItem.Click += new System.EventHandler(this.nuevaBatallaToolStripMenuItem_Click);
+            // 
             // TorneosActivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,7 +220,6 @@
         private System.Windows.Forms.ToolStripMenuItem todosLosTorneosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem torneosActivosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarTorneoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem cancelarTorneoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem participantesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem juradosToolStripMenuItem;
@@ -216,5 +228,7 @@
         private System.Windows.Forms.DataGridView tableTorneos;
         private System.Windows.Forms.DataGridViewButtonColumn btnParticipantes;
         private System.Windows.Forms.DataGridViewButtonColumn colCancelar;
+        private System.Windows.Forms.ToolStripMenuItem batallasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaBatallaToolStripMenuItem;
     }
 }

@@ -13,7 +13,7 @@ namespace Edu.Sena.Presentacion
 {
     public partial class TorneosActivos : Form
     {
-        Form1 f = new Form1();
+        Administrador f = new Administrador();
         Torneo torneo = new Torneo();
         int idTor = 0;
 
@@ -42,14 +42,42 @@ namespace Edu.Sena.Presentacion
         {
             DataTable da = torneo.torneosActivos();
             int coun = da.Rows.Count;
-
             DataRow d = da.Rows[e.RowIndex];
             idTor = Convert.ToInt32(d["idTorneo"].ToString());
-            MessageBox.Show(idTor.ToString());
 
+            if (e.ColumnIndex == 0)
+            {
+                Participantes p = new Participantes(idTor);
+                p.Show();
+                this.Hide();
+            }
+            else
+            {
+                torneo.cancelarTorneo(d["nombreTorneo"].ToString(), idTor);
+            }
+            
+        }
+
+        private void participantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Participantes p = new Participantes();
-               p.Show();
-               this.Hide();
+            p.Show();
+            this.Hide();
+        }
+
+        private void añadirFaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AñadirFase a = new AñadirFase();
+            a.Show();
+            this.Hide();
+        }
+
+        private void nuevaBatallaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarBatalla r = new RegistrarBatalla();
+            r.Show();
+            this.Hide();
         }
     }
 }
+
